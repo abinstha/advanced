@@ -1,0 +1,53 @@
+﻿@model DesignationViewModel
+@using System.Linq
+@section Title{
+    Designations
+}
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">Designations</h3>
+        <a asp-controller="Designation" asp-action="Create" class="btn btn-primary pull-right"><i class="fa fa-plus" style="padding-right: 5px;"></i>Add New</a>
+    </div>
+    <div class="box-body">
+        <table class="table table-bordered table-hover">
+            <thead>
+                <tr>
+                    <th>Designation</th>
+                    <th>Responsibilities</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @if (Model == null)
+                {
+                    <tr>
+                        <td colspan="3" style="text-align: center; font-size:17px">
+                            <i>No data avaliable!!! <a asp-controller="Designation" asp-action="Create" style="text-decoration: underline">Add Now</a></i>
+                        </td>
+                    </tr>               
+                }
+                else
+                {
+                   @foreach (var item in Model.Designations)
+                    {
+                        <tr>
+                            <td style="vertical-align: middle">
+                                @Html.DisplayFor(m => item.Title)
+                            </td>
+                            <td>
+                                @Html.Raw(item.Responsibilities)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-controller="Designation" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                <a asp-action="Details" asp-controller="Designation" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                                <a asp-action="Delete" asp-controller="Designation" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                            
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

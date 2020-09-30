@@ -1,0 +1,6 @@
+﻿.content-wrapper{
+    padding: 20px;
+}
+.content-wrapper > h2{
+    margin: 0px;
+}

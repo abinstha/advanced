@@ -1,0 +1,90 @@
+﻿@model UserEditViewModel
+@{
+    var photoPath = "~/dist/img/user/" + (Model.ExistingPhotoPath ?? "noimage.jpg");
+}
+@section Title{
+    Employees
+}
+<!--User Edit Box Starts Here-->
+<div class="box box-primary">
+    <div class="box-header">
+        <a asp-controller="User" asp-action="Index" class="btn btn-primary" style=" display: table; margin-bottom: 20px;">
+            <i class="fa fa-arrow-circle-left" style="padding-right: 5px;"></i>Back to List
+        </a>
+        <h3 class="box-title">Edit Employee: @Model.Name</h3>
+    </div>
+    <!--form start-->
+    <div asp-validation-summary="All"></div>
+    <form asp-area="Admin" asp-controller="User" enctype="multipart/form-data" asp-action="Update" method="post" role="form">
+        <input hidden asp-for="Id" />
+        <div class="box-body">
+            <div class="form-group">
+                <label asp-for="Name"></label>
+                <input class="form-control" asp-for="Name" />
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <select asp-for="Gender" asp-items="Html.GetEnumSelectList<Gender>()" class="form-control"></select>
+            </div>
+            <div class="input-group datepicker date" data-provide="datepicker">
+                <label asp-for="Dob"></label>
+                <input asp-for="Dob" class="form-control" placeholder="Deadline...">
+                <div class="input-group-addon">
+                    <span class="glyphicon glyphicon-th"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="DesignationId"></label>
+                <select asp-for="DesignationId" asp-items="Model.Designations" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="DepartmentId"></label>
+                <select asp-for="DepartmentId" asp-items="Model.Departments" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email"></label>
+                <input class="form-control" asp-for="Email" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Address"></label>
+                <input class="form-control" asp-for="Address" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Mobile"></label>
+                <input class="form-control" asp-for="Mobile" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Password"></label>
+                <input class="form-control" asp-for="Password" />
+            </div>
+            <div class="form-group row">
+                <label asp-for="Photo" class="col-sm-2 col-form-label"></label>
+                <div class="col-sm-10">
+                    <div class="custom-file">
+                        <input asp-for="Photo" class="form-control custom-file-input">
+                        <label class="custom-file-label">Choose File...</label>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group row col-sm-4 offset-4">
+                <img class="imageThumnail" src="@photoPath" asp-append-version="true" width="400" />
+            </div>
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+            <button type="submit" class="btn btn-success">Update</button>
+        </div>
+    </form>
+</div><!--User Edit Box Ends Here-->
+@section Scripts
+    {
+    <script>
+        $('.datepicker').datepicker({
+            format: "yyyy-mm-dd",
+            todayHighlight: true,
+            clearBtn: true,
+            orientation: "bottom auto",
+            autoclose: true,
+        });
+        $(".textarea").wysihtml5();
+    </script>
+}

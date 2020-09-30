@@ -1,0 +1,54 @@
+﻿@model LeaveViewModel
+@section Title{
+    Create Leave
+}
+<!--Leave Create Box Starts Here-->
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">Add New Leave</h3>
+        <a asp-controller="Leave" asp-action="Index" class="btn btn-primary pull-right">All Departments</a>
+    </div>
+    <div asp-validation-summary="All"></div>
+    <!--form start-->
+    <form asp-area="Admin" asp-controller="Leave" asp-action="Create" method="post" role="form">
+        <div class="box-body">
+            <div class="form-group">
+                <div class="input-daterange input-group" id="datepicker">
+                    <span class="input-group-addon">From</span>
+                    <input asp-for="From" class="input-sm form-control" />
+                    <span class="input-group-addon">to</span>
+                    <input asp-for="To" class="input-sm form-control" />
+                </div>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserId"></label>
+                <select asp-for="UserId" asp-items="Model.UserNames" class="form-control"></select>
+            </div>
+            <div class="form-group">
+                <label asp-for="Description"></label>
+                <!--Bootstrap-wysihtml5 Text Editor for description-->
+                <textarea class="textarea" asp-for="Description" placeholder="Place some text here"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                </textarea>
+            </div>
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </form>
+</div><!--Leave Create Box Ends Here-->
+@section Scripts
+    {
+    <script>
+        $('.input-daterange').datepicker({
+            format: "yyyy-mm-dd",
+            todayHighlight: true,
+            
+            clearBtn: true,
+            orientation: "bottom auto",
+            daysOfWeekDisabled: "6",
+            autoclose: true,
+        });
+        $(".textarea").wysihtml5();
+    </script>
+}

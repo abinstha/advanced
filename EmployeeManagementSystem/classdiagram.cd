@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="EmployeeManagementSystem.Areas.Admin.Repository.Implementation.SQLDepartmentRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYCAAAAAAAABAAAAAAAAAAAAAEAAgAAAAAAIAAAAAE=</HashCode>
+      <FileName>Areas\Admin\Repository\Implementation\SQLDepartmentRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EmployeeManagementSystem.Areas.Admin.Repository.Implementation.SQLDesignationRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAABAAAAABQAAAAAAEAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Areas\Admin\Repository\Implementation\SQLDesignationRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EmployeeManagementSystem.Areas.Admin.Repository.Implementation.SQLLeaveRepository" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="14.25" Y="4.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAABAAAAAAAAAAAAAEAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Areas\Admin\Repository\Implementation\SQLLeaveRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EmployeeManagementSystem.Areas.Admin.Repository.Implementation.SQLSalaryRepository" BaseTypeListCollapsed="true">
+    <Position X="10.75" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAABAAAAAAiAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\Admin\Repository\Implementation\SQLSalaryRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="EmployeeManagementSystem.Areas.Admin.Repository.Implementation.SQLVacancyRepository" BaseTypeListCollapsed="true">
+    <Position X="12.5" Y="5.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAABAAAAAAAAAAAAAEAQgABAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\Admin\Repository\Implementation\SQLVacancyRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="EmployeeManagementSystem.Areas.Admin.Repository.Interface.IDepartmentRepository" Collapsed="true">
+    <Position X="9.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYCAAAAAAAAAAAAAAAAAAAAAAEAAgAAAAAAIAAAAAE=</HashCode>
+      <FileName>Areas\Admin\Repository\Interface\IDepartmentRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EmployeeManagementSystem.Areas.Admin.Repository.Interface.IDesignationRepository" Collapsed="true">
+    <Position X="11.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAABQAAAAAAEAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Areas\Admin\Repository\Interface\IDesignationRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EmployeeManagementSystem.Areas.Admin.Repository.Interface.ILeaveRepository" Collapsed="true">
+    <Position X="13.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Areas\Admin\Repository\Interface\ILeaveRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EmployeeManagementSystem.Areas.Admin.Repository.Interface.ISalaryRepository" Collapsed="true">
+    <Position X="9.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAiAAAAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\Admin\Repository\Interface\ISalaryRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="EmployeeManagementSystem.Areas.Admin.Repository.Interface.IVacancyRepository" Collapsed="true">
+    <Position X="11.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYAAAAAAAAAAAAAAAAAAAAAAAEAQgABAAAAAAAAAAA=</HashCode>
+      <FileName>Areas\Admin\Repository\Interface\IVacancyRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

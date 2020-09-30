@@ -1,0 +1,58 @@
+﻿@section  Title{ 
+    Departments
+}
+@model DepartmentViewModel
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">Departments</h3>
+        <a asp-controller="Department" asp-action="Create" class="btn btn-primary pull-right"><i class="fa fa-plus" style="padding-right: 5px;"></i>Add New</a>
+    </div>
+    <div class="box-body">
+        <table class="table table-bordered table-hover text-center" id="dataList">
+            <thead>
+                <tr>
+                    <th>Department</th>
+                    <th>Head of Deparment</th>
+                    <th>No. of Employees</th>
+                    <th>E-mail Address</th>
+                    <th>Address</th>
+                    <th>Contact</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                    @foreach (var item in Model.Departments)
+                    {
+                        <tr>
+
+                            <td>
+                                @Html.DisplayFor(d => item.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(d => item.DepartmentHead)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(d => item.Users.Count)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(d => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(d => item.Address)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(d => item.Contact)
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-controller="Department" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                <a asp-action="Details" asp-controller="Department" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                                <a asp-action="Delete" asp-controller="Department" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            </td>
+                        
+
+                        </tr>
+                     }
+                </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,36 @@
+﻿@model DesignationViewModel
+@section Title{
+    Designations
+}
+<!--Designation Create Box Starts Here-->
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">Add New Designation</h3>
+        <a asp-controller="Designation" asp-action="Index" class="btn btn-primary pull-right">All Designations</a>
+    </div>
+    <!--form start-->
+    <form asp-area="Admin" asp-controller="Designation" asp-action="Create" method="post" role="form">
+        <div class="box-body">
+            <div class="form-group">
+                <label asp-for="Title"></label>
+                <input type="text" asp-for="Title" placeholder="Enter Department Name..." id="component" class="form-control">
+            </div>
+            <div class="form-group">
+                <label asp-for="Responsibilities"></label>
+                <!--Bootstrap-wysihtml5 Text Editor for description-->
+                <textarea class="textarea" asp-for="Responsibilities" placeholder="Place some text here"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;">
+                </textarea>
+            </div>
+        </div><!-- /.box-body -->
+        <div class="box-footer">
+            <button type="submit" class="btn btn-success">Submit</button>
+        </div>
+    </form>
+</div><!--Designation Create Box Ends Here-->
+@section Scripts
+    {
+    <script>
+        $(".textarea").wysihtml5();
+    </script>
+}

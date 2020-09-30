@@ -1,0 +1,42 @@
+﻿@model DepartmentDetailsViewModel
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Deparment : @Model.department.Name</h3>
+    </div>
+    <div class="box-body">
+        <table class="table table-borderless">
+            <tr>
+                <td>Department</td>
+                <td>:</td>
+                <td>@Model.department.Name</td>
+            </tr>
+            <tr>
+                <td>Head of Department</td>
+                <td>:</td>
+                <td>@Model.department.DepartmentHead</td>
+            </tr>
+            <tr>
+                <td>Department Contact</td>
+                <td>:</td>
+                <td>@Model.department.Contact</td>
+            </tr>
+            <tr>
+                <td>Department E-Mail Address</td>
+                <td>:</td>
+                <td>@Model.department.Email</td>
+            </tr>
+            <tr>
+                <td>Department Address</td>
+                <td>:</td>
+                <td>@Model.department.Address</td>
+            </tr>
+        </table>       
+    </div>
+    <div class="box-footer text-center">
+        <a asp-controller="Department" asp-action="Index" class="btn btn-primary">
+            <i class="fa fa-arrow-circle-left" style="padding-right: 5px;"></i>Back to List
+        </a>
+        <a asp-action="Edit" asp-controller="Deparment" asp-route-id="@Model.department.Id" class="btn btn-warning">Edit</a>
+        <a asp-action="Delete" asp-controller="Deparment" asp-route-id="@Model.department.Id" class="btn btn-danger">Delete</a>
+    </div>
+</div>

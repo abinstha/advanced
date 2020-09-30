@@ -1,0 +1,30 @@
+﻿@model DesignationDetailsViewModel
+@section Title{
+    Designations
+}
+<div class="box">
+    <div class="box-header">
+        <h3 class="box-title">Deparment : @Model.Designation.Title</h3>
+    </div>
+    <div class="box-body">
+        <table class="table table-borderless">
+            <tr>
+                <td>Designation</td>
+                <td>:</td>
+                <td>@Model.Designation.Title</td>
+            </tr>
+            <tr>
+                <td>Responsibilities</td>
+                <td>:</td>
+                <td>@Model.Designation.Responsibilities</td>
+            </tr>
+        </table>
+    </div>
+    <div class="box-footer text-center">
+        <a asp-controller="Designation" asp-action="Index" class="btn btn-primary">
+            <i class="fa fa-arrow-circle-left" style="padding-right: 5px;"></i>Back to List
+        </a>
+        <a asp-action="Edit" asp-controller="Designation" asp-route-id="@Model.Designation.Id" class="btn btn-warning">Edit</a>
+        <a asp-action="Delete" asp-controller="Designation" asp-route-id="@Model.Designation.Id" class="btn btn-danger">Delete</a>
+    </div>
+</div>
