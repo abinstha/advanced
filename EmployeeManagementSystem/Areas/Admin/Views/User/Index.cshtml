@@ -2,68 +2,87 @@
 @section Title{
     Employees
 }
-<div class="box box-primary">
-    <div class="box-header">
-        <h3 class="box-title">Employees</h3>
-        <a asp-controller="User" asp-action="Create" class="btn btn-primary pull-right"><i class="fa fa-plus" style="padding-right: 5px;"></i>Add New</a>
+<h1 class="h3 mb-2 text-gray-800">Employees</h1>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary float-left">All Employees</h6>
+        <a asp-controller="User" asp-action="Create" class="btn btn-primary float-right"><i class="fa fa-plus" style="padding-right: 5px;"></i>Add New</a>
     </div>
-    <div class="box-body">
-        <table class="table table-bordered table-hover" id="dataList">
-            <thead>
-                <tr>
-                    <th>Name</th>
-                    <th>Gender</th>
-                    <th>Date of Birth</th>
-                    <th>Email</th>
-                    <th>Contact</th>
-                    <th>Address</th>
-                    <th>Department</th>
-                    <th>Designation</th>
-                    <th>Salary</th>
-                    <th>Total No. of Leaves</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @if (Model == null)
-                {
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
                     <tr>
-                        <td colspan="3" style="text-align: center; font-size:17px">
-                            <i>No data avaliable!!! <a asp-controller="Designation" asp-action="Create" style="text-decoration: underline">Add Now</a></i>
-                        </td>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Date of Birth</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Department</th>
+                        <th>Designation</th>
+                        <th>Salary</th>
+                        <th>Total No. of Leaves</th>
+                        <th>Action</th>
                     </tr>
-                }
-                else
-                {
-                    @foreach (var item in Model.Users)
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Name</th>
+                        <th>Gender</th>
+                        <th>Date of Birth</th>
+                        <th>Email</th>
+                        <th>Contact</th>
+                        <th>Address</th>
+                        <th>Department</th>
+                        <th>Designation</th>
+                        <th>Salary</th>
+                        <th>Total No. of Leaves</th>
+                        <th>Action</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @if (Model == null)
                     {
                         <tr>
-                            <td>@Html.DisplayFor(u => item.Name)</td>
-                            <td>@Html.DisplayFor(u => item.Gender)</td>
-                            <td>@Html.DisplayFor(u => item.Dob)</td>
-                            <td>@Html.DisplayFor(u => item.Email)</td>
-                            <td>@Html.DisplayFor(u => item.Mobile)</td>
-                            <td>@Html.DisplayFor(u => item.Address)</td>
-                            <td>@Html.DisplayFor(u => item.Department.Name)</td>
-                            <td>@Html.DisplayFor(u => item.Designation.Title)</td>
-                            <td>
-                                @foreach (var sal in item.Designation.Salaries)
-                                {
-                                    @Html.DisplayFor(s => sal.SalaryAmount)
-                                }
-                            </td>
-                            <td>
-                                @Html.DisplayFor(u => item.Leaves.Count)
-                            </td>
-                            <td>
-                                <a asp-action="Edit" asp-controller="User" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-                                <a asp-action="Details" asp-controller="User" asp-route-id="@item.Id" class="btn btn-success">Details</a>
-                                <a asp-action="Delete" asp-controller="User" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            <td colspan="3" style="text-align: center; font-size:17px">
+                                <i>No data avaliable!!! <a asp-controller="Designation" asp-action="Create" style="text-decoration: underline">Add Now</a></i>
                             </td>
                         </tr>
                     }
-                }
-            </tbody>
-        </table>
+                    else
+                    {
+                        @foreach (var item in Model.Users)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(u => item.Name)</td>
+                                <td>@Html.DisplayFor(u => item.Gender)</td>
+                                <td>@Html.DisplayFor(u => item.Dob)</td>
+                                <td>@Html.DisplayFor(u => item.Email)</td>
+                                <td>@Html.DisplayFor(u => item.Mobile)</td>
+                                <td>@Html.DisplayFor(u => item.Address)</td>
+                                <td>@Html.DisplayFor(u => item.Department.Name)</td>
+                                <td>@Html.DisplayFor(u => item.Designation.Title)</td>
+                                <td>
+                                    @foreach (var sal in item.Designation.Salaries)
+                                    {
+                                        @Html.DisplayFor(s => sal.SalaryAmount)
+                                    }
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(u => item.Leaves.Count)
+                                </td>
+                                <td>
+                                    <a asp-action="Edit" asp-controller="User" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                    <a asp-action="Details" asp-controller="User" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                                    <a asp-action="Delete" asp-controller="User" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
+       

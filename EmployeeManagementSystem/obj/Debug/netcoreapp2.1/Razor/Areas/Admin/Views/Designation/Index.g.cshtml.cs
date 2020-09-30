@@ -98,7 +98,7 @@ using EmployeeManagementSystem.ViewModels.UserView;
             WriteLiteral("<div class=\"box box-primary\">\r\n    <div class=\"box-header\">\r\n        <h3 class=\"box-title\">Designations</h3>\r\n        ");
             EndContext();
             BeginContext(205, 152, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6129d5846c66432e9af626bbc9a79cb3", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "5a5faa83ec1545c6983942db7d52aa0f", async() => {
                 BeginContext(292, 61, true);
                 WriteLiteral("<i class=\"fa fa-plus\" style=\"padding-right: 5px;\"></i>Add New");
                 EndContext();
@@ -145,7 +145,7 @@ using EmployeeManagementSystem.ViewModels.UserView;
             WriteLiteral("                    <tr>\r\n                        <td colspan=\"3\" style=\"text-align: center; font-size:17px\">\r\n                            <i>No data avaliable!!! ");
             EndContext();
             BeginContext(913, 98, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "47a34d0831bd48fab348ad18d1a911b1", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "378944ecf6624ce09682750102534bd2", async() => {
                 BeginContext(1000, 7, true);
                 WriteLiteral("Add Now");
                 EndContext();
@@ -207,7 +207,7 @@ using EmployeeManagementSystem.ViewModels.UserView;
             WriteLiteral("\r\n                            </td>\r\n                            <td>\r\n                                ");
             EndContext();
             BeginContext(1633, 106, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "46dca246f6844c5cb067a420e33d1911", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2b6703818a1a4608b0aedbbbec096d5b", async() => {
                 BeginContext(1731, 4, true);
                 WriteLiteral("Edit");
                 EndContext();
@@ -245,7 +245,7 @@ using EmployeeManagementSystem.ViewModels.UserView;
             WriteLiteral("\r\n                                ");
             EndContext();
             BeginContext(1773, 112, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "b1ce417f1c404f59add80c2d7ccd294c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d579cc2e52dc48e5b41a67d2890253ab", async() => {
                 BeginContext(1874, 7, true);
                 WriteLiteral("Details");
                 EndContext();
@@ -283,7 +283,7 @@ using EmployeeManagementSystem.ViewModels.UserView;
             WriteLiteral("\r\n                                ");
             EndContext();
             BeginContext(1919, 109, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4396804321fb4adc90d7774b90401f0b", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9417f8f6291e4bef910bdb16c8a3861e", async() => {
                 BeginContext(2018, 6, true);
                 WriteLiteral("Delete");
                 EndContext();

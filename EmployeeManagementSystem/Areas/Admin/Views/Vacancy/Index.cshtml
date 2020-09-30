@@ -2,42 +2,57 @@
 @section Title{
     Vacancies
 }
-<div class="box box-primary">
-    <div class="box-header">
-        <h3 class="box-title">Vacancies</h3>
-        <a asp-controller="Vacancy" asp-action="Create" class="btn btn-primary pull-right"><i class="fa fa-plus" style="padding-right: 5px;"></i>Add New</a>
-    </div>
-    <div class="box-body">
-        <table class="table table-bordered table-hover" id="dataList">
-            <thead>
-                <tr>
-                    <th>Designation</th>
-                    <th>Department</th>
-                    <th>Number of Vacancies</th>
-                    <th>Deadline</th>
-                    <th>Job Description</th>
-                    <th>Job Specification</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Vacancies)
-                {
+<h1 class="h3 mb-2 text-gray-800">Vacancies</h1>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary float-left">
+            All Vacancies/h6>
+            <a asp-controller="Vacancy" asp-action="Create" class="btn btn-primary float-right"><i class="fa fa-plus" style="padding-right: 5px;"></i>Add New</a>
+</div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
                     <tr>
-                        <td>@Html.DisplayFor(v => item.Designation.Title)</td>
-                        <td>@Html.DisplayFor(v => item.Department.Name)</td>
-                        <td>@Html.DisplayFor(v => item.NumberOfVacancy)</td>
-                        <td>@Html.DisplayFor(v => item.ExpiryDate)</td>
-                        <td>@Html.Raw((item.Description.Length > 200 ? item.Description.Substring(0, 200) : item.Description))</td>
-                        <td>@Html.Raw((item.Specification.Length > 200 ? item.Specification.Substring(0, 200) : item.Description))</td>
-                        <td>
-                            <a asp-action="Edit" asp-controller="Vacancy" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-                            <a asp-action="Details" asp-controller="Vacancy" asp-route-id="@item.Id" class="btn btn-success">Details</a>
-                            <a asp-action="Delete" asp-controller="Vacancy" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                        </td>
+                        <th>Designation</th>
+                        <th>Department</th>
+                        <th>Number of Vacancies</th>
+                        <th>Deadline</th>
+                        <th>Job Description</th>
+                        <th>Job Specification</th>
+                        <th>Action</th>
                     </tr>
-                }
-            </tbody>
-        </table>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>Designation</th>
+                        <th>Department</th>
+                        <th>Number of Vacancies</th>
+                        <th>Deadline</th>
+                        <th>Job Description</th>
+                        <th>Job Specification</th>
+                        <th>Action</th>
+                    </tr>
+                </tfoot>
+                <tbody>
+                    @foreach (var item in Model.Vacancies)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(v => item.Designation.Title)</td>
+                            <td>@Html.DisplayFor(v => item.Department.Name)</td>
+                            <td>@Html.DisplayFor(v => item.NumberOfVacancy)</td>
+                            <td>@Html.DisplayFor(v => item.ExpiryDate)</td>
+                            <td>@Html.Raw((item.Description.Length > 200 ? item.Description.Substring(0, 200) : item.Description))</td>
+                            <td>@Html.Raw((item.Specification.Length > 200 ? item.Specification.Substring(0, 200) : item.Description))</td>
+                            <td>
+                                <a asp-action="Edit" asp-controller="Vacancy" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                <a asp-action="Details" asp-controller="Vacancy" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                                <a asp-action="Delete" asp-controller="Vacancy" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
