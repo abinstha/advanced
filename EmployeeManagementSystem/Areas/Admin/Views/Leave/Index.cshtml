@@ -2,46 +2,53 @@
 @section Title{
     Leaves
 }
-<div class="box box-primary">
-    <div class="box-header">
-        <h3 class="box-title">Leaves</h3>
-        <a asp-controller="Leave" asp-action="Create" class="btn btn-primary pull-right"><i class="fa fa-plus" style="padding-right: 5px;"></i>Add New</a>
+<h1 class="h3 mb-2 text-gray-800">Vacancies</h1>
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary float-left">All Vacancies/h6>
+            <a asp-controller="Vacancy" asp-action="Create" class="btn btn-primary float-right"><i class="fa fa-plus" style="padding-right: 5px;"></i>Add New</a>
     </div>
-    <div class="box-body">
-        <table class="table table-bordered table-hover" id="dataList">
-            <thead>
-                <tr>
-                    <th>Employee Name</th>
-                    <th>Leave Date</th>
-                    <th>Employee Email</th>
-                    <th>Employee Contact</th>
-                    <th>Employee Department</th>
-                    <th>Employee Designation</th>
-                    <th>Leave Details</th>
-                    <th>Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var item in Model.Leaves)
-                {
-                    <tr>
-                        <td>@Html.DisplayFor(l => item.User.Name)</td>
-                        <td>@Html.DisplayFor(l => item.From)-@Html.DisplayFor(l => item.To)</td>
-                        <td>@Html.DisplayFor(l => item.User.Email)</td>
-                        <td>@Html.DisplayFor(l => item.User.Mobile)</td>
-                        <td>@Html.DisplayFor(l => item.User.Department.Name)</td>
-                        <td>@Html.DisplayFor(l => item.User.Designation.Title)</td>
-                        <td>
-                            @Html.Raw((item.Description.Length > 200 ? item.Description.Substring(0, 200) : item.Description))
-                        </td>
-                        <td>
-                            <a asp-action="Edit" asp-controller="Leave" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-                            <a asp-action="Details" asp-controller="Leave" asp-route-id="@item.Id" class="btn btn-success">Details</a>
-                            <a asp-action="Delete" asp-controller="Leave" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                </thead>
+            </table>
+        </div>
     </div>
 </div>
+                    <tr>
+                        <th>Employee Name</th>
+                        <th>Leave Date</th>
+                        <th>Employee Email</th>
+                        <th>Employee Contact</th>
+                        <th>Employee Department</th>
+                        <th>Employee Designation</th>
+                        <th>Leave Details</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.Leaves)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(l => item.User.Name)</td>
+                            <td>@Html.DisplayFor(l => item.From)-@Html.DisplayFor(l => item.To)</td>
+                            <td>@Html.DisplayFor(l => item.User.Email)</td>
+                            <td>@Html.DisplayFor(l => item.User.Mobile)</td>
+                            <td>@Html.DisplayFor(l => item.User.Department.Name)</td>
+                            <td>@Html.DisplayFor(l => item.User.Designation.Title)</td>
+                            <td>
+                                @Html.Raw((item.Description.Length > 200 ? item.Description.Substring(0, 200) : item.Description))
+                            </td>
+                            <td>
+                                <a asp-action="Edit" asp-controller="Leave" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                                <a asp-action="Details" asp-controller="Leave" asp-route-id="@item.Id" class="btn btn-success">Details</a>
+                                <a asp-action="Delete" asp-controller="Leave" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
