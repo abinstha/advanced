@@ -2,43 +2,33 @@
 @section Title{
     Salaries
 }
-<h1 class="h3 mb-2 text-gray-800">Salaries</h1>
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">All Salaries</h6>
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">Salaries</h3>
+        <a asp-controller="Salary" asp-action="Create" class="btn btn-primary pull-right"><i class="fa fa-plus" style="padding-right: 5px;"></i>Add New</a>
     </div>
-    <div class="card-body">
-        <div class="table-responsive">
-            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                <thead>
+    <div class="box-body">
+        <table class="table table-bordered table-hover" id="dataList">
+            <thead>
+                <tr>
+                    <th>Designation</th>
+                    <th>Salary Amount</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Salaries)
+                {
                     <tr>
-                        <th>Designation</th>
-                        <th>Salary Amount</th>
-                        <th>Action</th>
+                        <td>@Html.DisplayFor(v => item.Designation.Title)</td>
+                        <td>@Html.DisplayFor(v => item.SalaryAmount)</td>
+                        <td>
+                            <a asp-action="Edit" asp-controller="Salary" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                            <a asp-action="Delete" asp-controller="Salary" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        </td>
                     </tr>
-                </thead>
-                <tfoot>
-                    <tr>
-                        <th>Designation</th>
-                        <th>Salary Amount</th>
-                        <th>Action</th>
-                    </tr>
-                </tfoot>
-                <tbody>
-                    @foreach (var item in Model.Salaries)
-                    {
-                        <tr>
-                            <td>@Html.DisplayFor(v => item.Designation.Title)</td>
-                            <td>@Html.DisplayFor(v => item.SalaryAmount)</td>
-                            <td>
-                                <a asp-action="Edit" asp-controller="Salary" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
-                                <a asp-action="Delete" asp-controller="Salary" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
-                            </td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-        </div>
+                }
+            </tbody>
+        </table>
     </div>
 </div>
-                   

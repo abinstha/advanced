@@ -68,7 +68,7 @@ namespace EmployeeManagementSystem
             });
             app.UseMvc(routes =>
             {
-                routes.MapRoute("register", "{controller=Register}/{action=Add}");
+                routes.MapRoute("register", "{controller=Register}/{action=Index}");
             });
             app.UseMvc(routes =>
             {

@@ -2,16 +2,16 @@
 @section Title{
     Create Employee
 }
-<h1 class="h3 mb-2 text-gray-800">Add New Employee</h1>
-<div class="card shadow mb-4">
-    <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary float-left">New Employee</h6>
-        <a asp-controller="User" asp-action="Index" class="btn btn-primary float-right">All Employees</a>
+<!--User Create Box Starts Here-->
+<div class="box box-primary">
+    <div class="box-header">
+        <h3 class="box-title">Add New Employee</h3>
+        <a asp-controller="User" asp-action="Index" class="btn btn-primary pull-right">All Employees</a>
     </div>
+    <!--form start-->
     <div asp-validation-summary="All"></div>
     <form asp-area="Admin" asp-controller="User" enctype="multipart/form-data" asp-action="Create" method="post" role="form">
-        <div class="card-body">
-
+        <div class="box-body">
             <div class="form-group">
                 <label asp-for="Name"></label>
                 <input class="form-control" asp-for="Name" />
@@ -29,7 +29,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="DesignationId"></label>
-                <select asp-for="DesignationId" asp-items="Model.Designations" class="form-control form-control-user"></select>
+                <select asp-for="DesignationId" asp-items="Model.Designations" class="form-control"></select>
             </div>
             <div class="form-group">
                 <label asp-for="DepartmentId"></label>
@@ -37,7 +37,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="Email"></label>
-                <input class="form-control form-control-user" asp-for="Email" />
+                <input class="form-control" asp-for="Email" />
             </div>
             <div class="form-group">
                 <label asp-for="Address"></label>
@@ -60,23 +60,22 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="card-footer">
+        </div><!-- /.box-body -->
+        <div class="box-footer">
             <button type="submit" class="btn btn-success">Submit</button>
         </div>
     </form>
-</div>
-
-        @section Scripts
-            {
-            <script>
-                $('.datepicker').datepicker({
-                    format: "yyyy-mm-dd",
-                    todayHighlight: true,
-                    clearBtn: true,
-                    orientation: "bottom auto",
-                    autoclose: true,
-                });
-                $(".textarea").wysihtml5();
-            </script>
-        }
+</div><!--User Create Box Ends Here-->
+@section Scripts
+    {
+    <script>
+        $('.datepicker').datepicker({
+            format: "yyyy-mm-dd",
+            todayHighlight: true,
+            clearBtn: true,
+            orientation: "bottom auto",
+            autoclose: true,
+        });
+        $(".textarea").wysihtml5();
+    </script>
+}

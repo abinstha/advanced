@@ -23,7 +23,7 @@ namespace EmployeeManagementSystem.Areas.Public.Repository.Implementation
         public User GetUser(User user)
         {
             return _context.Users.SingleOrDefault(a => a.Email.Equals(user.Email) && 
-                    a.Decrypt(a.Password).Equals(user.Password) && a.IsAdmin == true);
+                    a.Password.Equals(user.Password) && a.IsAdmin == true);
         }
     }
 }

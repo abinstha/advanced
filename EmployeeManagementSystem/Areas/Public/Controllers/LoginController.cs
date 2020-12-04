@@ -24,7 +24,7 @@ namespace EmployeeManagementSystem.Areas.Admin.Controllers
         {
             return View();
         }
-        [Route("/account")]
+   
         [HttpPost]
         public IActionResult Login(User user)
         {
@@ -34,10 +34,10 @@ namespace EmployeeManagementSystem.Areas.Admin.Controllers
                 if (account != null)
                 {
                     HttpContext.Session.SetString("email", user.Email);
-                    if(user.IsAdmin == true)
+                    if(account.IsAdmin == true)
                     {
                         return RedirectToAction("Index", "Dashboard", new { area = "Admin" });
-                    }else if(user.IsAdmin == false)
+                    }else if(account.IsAdmin == false)
                     {
                         return RedirectToAction("Index", "Dashboard", new { area = "Public" });
                     }
